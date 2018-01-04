@@ -1,6 +1,6 @@
 import string 	as STR
 import random 	as RND
-import sys 		as SYS
+import sys 	as SYS
 
 class GeneratorBase:
 	global fkey
