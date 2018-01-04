@@ -24,7 +24,7 @@ class GeneratorBase:
 		k = 0
 		tmp = ""
 		for i in range(5):
-			tmp = tmp + RND.choice(STR.letters).upper()
+			tmp += RND.choice(STR.letters).upper()
 		self.fkey = tmp
 		tmp = ""
 		allowedNumber = True
@@ -33,12 +33,12 @@ class GeneratorBase:
 				tmp = RND.choice(STR.letters).upper()
 			a = RND.randint(1,2)
 			if(a == 1 and allowedNumber):
-				tmp = tmp + str(RND.randint(10,99))
+				tmp += str(RND.randint(10,99))
 				allowedNumber = False
 			else:
-				tmp = tmp + RND.choice(STR.letters).upper()
+				tmp += RND.choice(STR.letters).upper()
 		if(len(tmp) == 3):
-			tmp = tmp + str(RND.randint(10,99))
+			tmp += str(RND.randint(10,99))
 		if(len(tmp) == 4):
 			tmp = tmp[0:len(tmp)] + str(RND.randint(10,99))
 		allowedNumber = True
@@ -49,10 +49,10 @@ class GeneratorBase:
 				tmp = RND.choice(STR.letters).upper()
 			a = RND.randint(1,2)
 			if(a == 1 and allowedNumber):
-				tmp = tmp + str(RND.randint(1,9))
+				tmp += str(RND.randint(1,9))
 				allowedNumber = False
 			else:
-				tmp = tmp + RND.choice(STR.letters).upper()
+				tmp += RND.choice(STR.letters).upper()
 		self.tkey = tmp
 		tmp = ""
 		self.keystr = self.fkey + "-" + self.skey + "-" + self.tkey
