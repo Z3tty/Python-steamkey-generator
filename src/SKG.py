@@ -72,11 +72,20 @@ class SteamkeyGenerator:
 		for i in range(n):
 			keys[i] = GEN.GetKey()
 		return keys
+
 def main():
-	if(len(SYS.argv) != 2):
-		print("Usage :: " + SYS.argv[0] + " <keys>")
+	if(len(SYS.argv) < 2 or len(SYS.argv) > 3):
+		print("Usage :: " + SYS.argv[0] + " <keys> [-file || -f]")
 		SYS.exit()
 	SKG = SteamkeyGenerator()
 	keylist = SKG.CreateKeys(int(SYS.argv[1]))
+	if(len(SYS.argv) == 3):
+		if(SYS.argv[2] == "-file" or SYS.argv[2] == "-f"):
+			with open("keys.txt", "w+") as FILE:
+				for p in range(len(keylist)):
+					FILE.write(keylist[p]+"\n")
+			print("Keys.txt has been created/updated successfully")
+		else:
+			print("Invalid flag provided. Did you mean -file?")
 
 main()
