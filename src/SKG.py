@@ -1,7 +1,7 @@
-import string 	as STR
-import random 	as RND
-import sys 	as SYS
-import webbrowser as WEB
+import string 		as STR
+import random 		as RND
+import sys 		as SYS
+import webbrowser 	as WEB
 
 class GeneratorBase: # Define a set of base functions to utilize
 	# Define global keyslots
