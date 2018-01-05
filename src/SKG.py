@@ -1,6 +1,7 @@
-import string 	as STR
-import random 	as RND
-import sys 	as SYS
+import string 		as STR
+import random 		as RND
+import sys 		as SYS
+import webbrowser 	as WEB
 
 class GeneratorBase:
 	global fkey
@@ -17,6 +18,7 @@ class GeneratorBase:
 			print("GeneratorBase successfully created")
 		else:
 			print("Launch Failure: GeneratorBase failed to create keyslots")
+			SYS.exit()
 
 	def _GenerateKey(self):
 		i = 0
@@ -85,6 +87,7 @@ def main():
 				for p in range(len(keylist)):
 					FILE.write(keylist[p]+"\n")
 			print("Keys.txt has been created/updated successfully")
+			WEB.open("keys.txt")
 		else:
 			print("Invalid flag provided. Did you mean -file?")
 
